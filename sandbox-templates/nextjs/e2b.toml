@@ -1,0 +1,17 @@
+# This is a config for E2B sandbox template.
+# You can use template ID (wqrmdnk4uscg0l3fp70d) or template name (forge-nextjs-test-2) to create a sandbox:
+
+# Python SDK
+# from e2b import Sandbox, AsyncSandbox
+# sandbox = Sandbox("forge-nextjs-test-2") # Sync sandbox
+# sandbox = await AsyncSandbox.create("forge-nextjs-test-2") # Async sandbox
+
+# JS SDK
+# import { Sandbox } from 'e2b'
+# const sandbox = await Sandbox.create('forge-nextjs-test-2')
+
+team_id = "b3ef8376-2b59-4a0f-95b3-4dc2f768ca43"
+start_cmd = "/compile_page.sh"
+dockerfile = "e2b.Dockerfile"
+template_name = "forge-nextjs-test-2"
+template_id = "wqrmdnk4uscg0l3fp70d"
