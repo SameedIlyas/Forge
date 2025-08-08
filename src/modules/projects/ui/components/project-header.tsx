@@ -48,7 +48,7 @@ export const ProjectHeader = ({ projectId }: Props) => {
                         transition-opacity pl-2!"
                     >
                        <Image 
-                        src="logo.svg" 
+                        src="/logo.svg" 
                         alt="Forge"
                         width={18}
                         height={18} 
