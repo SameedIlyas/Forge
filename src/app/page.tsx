@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { toast } from "sonner";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -20,7 +20,7 @@ const Page = () => {
       toast.error(error.message);
     },
     onSuccess: (data) => {
-      router.push(`/projcts/${data.id}`);
+      router.push(`/projects/${data.id}`);
     }
   }));
 
