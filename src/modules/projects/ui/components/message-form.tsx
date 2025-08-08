@@ -112,7 +112,6 @@ export const MessageForm =  ({ projectId }: Props) => {
                             <Loader2Icon className="size-4 animate-spin" />
                         ) : (<ArrowUpIcon />
                         )}
-                       <ArrowUpIcon /> 
                     </Button>
                 </div>
             </form>

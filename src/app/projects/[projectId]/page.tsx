@@ -9,7 +9,7 @@ interface Props {
     }>
 };
 
-export const Page = async ({ params }: Props) => {
+export default async function Page ({ params }: Props) {
     const { projectId } = await params;
 
     const queryClient = getQueryClient();
