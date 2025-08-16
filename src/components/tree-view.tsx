@@ -80,7 +80,7 @@ const Tree = ({
         return (
             <SidebarMenuButton
               isActive={isSelected}
-              className="data-[active=true] bg-transparent"
+              className="data-[active=true]:bg-transparent"
               onClick={() => onSelect?.(currentPath)}
             >
                 <FileIcon />
@@ -93,7 +93,7 @@ const Tree = ({
 
     //It's a folder
     return (
-        <SidebarMenuButton>
+        <SidebarMenuItem>
             <Collapsible
               className="group/collapsible [&[data-state=open]>button>svg:first-child]:rotate-90"
               defaultOpen
@@ -121,6 +121,6 @@ const Tree = ({
                     </SidebarMenuSub>
                 </CollapsibleContent>
             </Collapsible>
-        </SidebarMenuButton>
+        </SidebarMenuItem>
     );
 };

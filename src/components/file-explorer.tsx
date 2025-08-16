@@ -5,7 +5,7 @@ import { convertFilesToTreeItems } from "@/lib/utils";
 
 import { Hint } from "./hint";
 import { Button } from "./ui/button";
-import { CodeView } from "./code-view";
+import { CodeView } from "@/components/code-view";
 import {
     ResizableHandle,
     ResizablePanel,
@@ -25,12 +25,43 @@ type FileCollection = { [path: string]: string };
 
 function getLanguageFromExtension(filename: string): string {
     const extension = filename.split(".").pop()?.toLowerCase();
-    return extension || "text";
-};
+    
+    const extensionMap: Record<string, string> = {
+        'js': 'javascript',
+        'jsx': 'jsx',
+        'ts': 'typescript',
+        'tsx': 'tsx',
+        'py': 'python',
+        'html': 'markup',
+        'htm': 'markup',
+        'xml': 'markup',
+        'css': 'css',
+        'scss': 'scss',
+        'sass': 'sass',
+        'json': 'json',
+        'md': 'markdown',
+        'sh': 'bash',
+        'bash': 'bash',
+        'yml': 'yaml',
+        'yaml': 'yaml',
+        'php': 'php',
+        'java': 'java',
+        'c': 'c',
+        'cpp': 'cpp',
+        'cs': 'csharp',
+        'rb': 'ruby',
+        'go': 'go',
+        'rs': 'rust',
+        'sql': 'sql',
+        'txt': 'text',
+    };
+    
+    return extensionMap[extension || ''] || 'text';
+}
 
 interface FileBreadcrumbProps {
     filePath: string;
-};
+}
 
 const FileBreadcrumb = ({ filePath }: FileBreadcrumbProps) => {
     const pathSegments = filePath.split("/");
@@ -97,7 +128,7 @@ const FileBreadcrumb = ({ filePath }: FileBreadcrumbProps) => {
 
 interface FileExplorerProps {
     files: FileCollection;
-};
+}
 
 export const FileExplorer = ({
     files,
